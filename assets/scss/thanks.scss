@@ -1,0 +1,67 @@
+@import 'variable';
+
+.thanks-page {
+    height: 100vh;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ECEFF1 0%, #FFFFFF 100%);
+    text-align: center;
+    
+    h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+        font-weight: 700;
+        color: $text-navy;
+        margin-bottom: 2rem;
+        animation: fadeInUp 0.8s ease-out;
+    }
+    
+    p {
+        font-size: 1.6rem;
+        line-height: 1.6;
+        color: $sub-text-gray;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+    }
+
+}
+
+// アニメーション定義
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// タブレット対応
+@media screen and (max-width: $tablet) {
+    .thanks-page {
+        padding: 0 3rem;
+        
+        h1 {
+            font-size: 3.6rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        p {
+            font-size: 1.6rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .main-btn {
+            margin-top: 3rem;
+            font-size: 1.6rem;
+            padding: 1.3rem 2.5rem;
+        }
+    }
+}

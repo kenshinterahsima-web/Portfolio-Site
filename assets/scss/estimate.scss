@@ -1,0 +1,514 @@
+@import 'variable';
+
+.estimate {
+  background-color: #ECEFF1 !important;
+  padding: 20rem 0;
+
+  .estimate-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8rem;
+  }
+
+  .static-page-title {
+    flex: 0 0 auto;
+    min-width: 300px;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    .top-text {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    .bottom-text {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+  }
+
+  .estimate-main {
+    flex: 1;
+    max-width: 800px;
+
+    .form {
+      width: 100%;
+    }
+  }
+
+  // Contact Form 7のスタイリング
+  .wpcf7 {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    .wrap-form-contact {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px 4rem;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .item-form-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+      // フル幅の項目（テキストエリア、プライバシーポリシー、reCAPTCHA、ボタン）は2列にまたがる（デスクトップのみ）
+      @media (min-width: calc($tablet + 1px)) {
+        .item-form-contact:has(textarea),
+        .item-form-contact:has(.wpcf7-acceptance),
+        .item-form-contact:has(.reCAPTCHA),
+        .item-form-contact:has(.btn-wrap) {
+          grid-column: 1 / -1;
+        }
+      }
+
+    .heading-form-contact {
+      font-size: 12px;
+      font-weight: 600;
+      color: $color-black;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .contact-label {
+      color: $color-black;
+      background-color: $key-color;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 4px;
+      margin-left: 8px;
+    }
+
+    .detail-form-contact {
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="url"],
+      input[type="number"],
+      select,
+      textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 16px 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        color: $color-black;
+        background-color: $color-white;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: $key-color;
+          box-shadow: 0 0 0 2px rgba($key-color, 0.1);
+        }
+
+        &::placeholder {
+          color: #999;
+          font-size: 14px;
+        }
+      }
+
+      select {
+        cursor: pointer;
+        background-image: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+        background-position: right 12px center;
+        background-repeat: no-repeat;
+        background-size: 16px;
+        padding-right: 40px;
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+    }
+
+    // プライバシーポリシー同意部分
+    .center {
+      margin: 40px 0 20px;
+      
+      @media (min-width: calc($tablet + 1px)) {
+        grid-column: 1 / -1;
+      }
+
+      .wpcf7-acceptance {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+          margin: 0;
+          accent-color: #004ddd;
+          margin-top: 2px;
+        }
+
+        .wpcf7-list-item {
+          margin: 0;
+          
+          label {
+            display: flex;
+            gap: 12px;
+            padding-bottom: 4px;
+            font-size: 14px;
+            color: $color-black;
+            line-height: 1.6;
+            cursor: pointer;
+            margin: 0;
+
+            a {
+              color: #004ddd;
+              text-decoration: underline;
+              font-weight: 600;
+              margin-right: 2px;
+            }
+          }
+        }
+      }
+    }
+
+    // reCAPTCHA部分
+    .reCAPTCHA {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+
+      a {
+        color: #004ddd;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .btn-wrap {
+      margin-top: 40px;
+      display: flex;
+      justify-content: flex-start;
+      
+      @media (min-width: calc($tablet + 1px)) {
+        grid-column: 1 / -1;
+      }
+
+      input[type="submit"] {
+        background: $key-color;
+        color: $color-black;
+        font-size: 1.8rem;
+        font-weight: 700;
+        border: 2px solid $key-color;
+        border-radius: 12px;
+        padding: 1.1em 3em;
+        cursor: pointer;
+        letter-spacing: 0.05em;
+        transition: all 0.3s ease;
+        width: auto;
+        min-width: 26rem;
+        
+        &:hover {
+          background: darken($key-color, 15%);
+          border-color: darken($key-color, 15%);
+        }
+      }
+    }
+
+    // エラーメッセージのスタイリング
+    .wpcf7-not-valid-tip {
+      color: #ef242e;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .wpcf7-validation-errors {
+      background-color: #fff3cd;
+      border: 1px solid #ffeaa7;
+      color: #856404;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .wpcf7-mail-sent-ok {
+      background-color: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    // screen-reader-responseを非表示
+    .screen-reader-response {
+      display: none !important;
+    }
+
+    // エラーメッセージなど
+    .wpcf7-response-output {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+      display: none;
+    }
+    
+    > .wpcf7-response-output.wpcf7-mail-sent-ok {
+      display: block !important;
+    }
+    
+    .wpcf7-not-valid-tip {
+      display: block;
+      font-size: 1.4rem;
+      color: #e53935;
+      margin-bottom: 1.2rem;
+      font-weight: bold;
+    }
+    
+    .screen-reader-response {
+      display: none;
+    }
+  }
+}
+
+// タブレット対応
+@media (max-width: $tablet) {
+  .estimate {
+    padding: 6rem 0;
+
+    .estimate-wrapper {
+      flex-direction: column;
+      gap: 6rem;
+    }
+
+    .static-page-title {
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-top: 0;
+      text-align: center;
+      width: 100%;
+
+      .top-text {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .bottom-text {
+        text-align: center;
+      }
+    }
+
+    .estimate-main {
+      padding: 0;
+      width: 100%;
+    }
+
+    .wpcf7 {
+      .wrap-form-contact {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .item-form-contact {
+        gap: 8px;
+      }
+
+      .heading-form-contact {
+        font-size: 14px;
+      }
+
+      .detail-form-contact {
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        input[type="number"],
+        select,
+        textarea {
+          padding: 12px 16px;
+          font-size: 14px;
+        }
+      }
+
+      // プライバシーポリシー同意（モバイル）
+      .center {      
+        .wpcf7-acceptance {
+          flex-direction: column;
+          gap: 8px;
+
+          .wpcf7-list-item {
+            flex-direction: column;
+            gap: 8px;
+
+            label {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+
+      // reCAPTCHA（モバイル）
+      .reCAPTCHA {
+        font-size: 10px;
+      }
+
+      .btn-wrap {
+        margin-top: 32px;
+
+        input[type="submit"] {
+          padding: 16px 40px;
+          font-size: 16px;
+          min-width: 160px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.estimate-faq {
+  padding: 12rem 0;
+  background-color: $color-white;
+
+  .section-title {
+    text-align: center;
+    align-items: center;
+    margin-bottom: 8rem;
+  }
+
+  .faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+
+    .faq-item {
+      background: $color-white;
+      border-radius: 1.6rem;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2.4rem 3rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        h3 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: $text-navy;
+          margin: 0;
+          flex: 1;
+        }
+
+        .faq-icon {
+          font-size: 3rem;
+          font-weight: 700;
+          color: $text-navy;
+          line-height: 1;
+          transition: transform 0.3s ease;
+          margin-left: 2rem;
+        }
+
+        &:hover {
+          background: rgba($key-color, 0.1);
+        }
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        padding: 0 3rem;
+
+        p {
+          font-size: 1.5rem;
+          line-height: 2;
+          color: $color-black;
+          padding-bottom: 0;
+          margin-top: 2rem;
+        }
+      }
+
+      &.active {
+        .faq-question {
+          background: rgba($key-color, 0.1);
+
+          .faq-icon {
+            transform: rotate(45deg);
+          }
+        }
+
+        .faq-answer {
+          max-height: 500px;
+          padding: 0 3rem 2.4rem 3rem;
+        }
+      }
+    }
+  }
+}
+
+// FAQのレスポンシブ対応
+@media (max-width: $tablet) {
+  .estimate-faq {
+    padding: 8rem 0;
+
+    .section-title {
+      margin-bottom: 4rem;
+    }
+
+    .faq-list {
+      padding: 0 2rem;
+
+      .faq-item {
+        margin-bottom: 1.6rem;
+
+        .faq-question {
+          padding: 2rem;
+
+          h3 {
+            font-size: 1.6rem;
+          }
+
+          .faq-icon {
+            font-size: 2.4rem;
+            margin-left: 1.6rem;
+          }
+        }
+
+        .faq-answer {
+          padding: 0 2rem;
+
+          p {
+            font-size: 1.4rem;
+            line-height: 1.8;
+          }
+        }
+
+        &.active {
+          .faq-answer {
+            padding: 0 2rem 2rem 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+

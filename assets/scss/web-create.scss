@@ -1,0 +1,446 @@
+@import 'variable';
+
+
+.service-top {
+    margin-top: 15rem;
+    display: flex;
+    gap: 2.2rem;
+
+    img {
+      padding-bottom: 8px;
+      width: 35px;
+      height: auto;
+    }
+
+    .back-copy {
+        font-size: 1.6rem;
+        vertical-align: middle;
+        color: $color-black;
+        text-decoration: none;
+        position: relative;
+        outline: none;
+        padding-bottom: 6px;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: $color-black;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform .22s ease;
+        }
+
+        &:hover::after,
+        &:focus-visible::after {
+            transform: scaleX(1);
+        }
+    }
+}
+
+.web-create-main {
+    margin-top: 7rem;
+
+    .web-create-title {
+        font-size: 4.8rem;
+        font-weight: 900;
+        line-height: 8rem;
+        margin-bottom: 16px;
+    
+        .en {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-left: 2.4rem;
+        }
+    }
+    .web-create-desc {
+        font-size: 1.6rem;
+        margin-bottom: 10rem;
+        line-height: 26px;
+    }
+}
+
+.web-create-image-area {
+    
+    padding-inline-start: 8rem;
+
+    img {
+      border-radius: 16px 0 0 16px;
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+    }
+}
+
+.web-create-copy {
+    padding-top: 16rem;
+    padding-bottom: 16rem;
+
+    .main-copy {
+        gap: 8px;
+        font-size: 4rem;
+        line-height: 6rem;
+        font-weight: 900;
+        margin-bottom: 3.6rem;
+
+        .copy {
+            display: inline-block; // ← inlineから変更
+            padding: 0.4em 0.8em; // 相対値のほうがバランス取りやすい
+            background: $key-color;
+        }
+
+        .top {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.strongs-point-section {
+  background: #ECEFF1;
+  padding-top: 16rem;
+  padding-bottom: 16rem;
+
+  .strongs-point__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+  
+    .strongs-point__item {
+      display: flex;
+      align-items: flex-start;
+      padding: 6rem 0;
+      position: relative;
+      margin-bottom: 2rem;
+      gap: 12rem;
+      border-bottom: 1px solid $sub-text-gray;
+  
+      &:last-child {
+          border-bottom: none;
+      }
+  
+      .left-copy {
+          display: flex;
+          align-items: flex-start;
+          gap: 3rem;
+          
+          .num {
+              display: inline-block;
+              background: $key-color;
+              color: $color-black;
+              font-weight: 700;
+              font-size: 1.6rem;
+              border-radius: 90rem;
+              padding: 0.5em 1.2em;
+              letter-spacing: 0.05em;
+              margin-right: 3rem;
+              flex-shrink: 0;
+          }
+  
+          .content-copy {
+              flex: 1;
+              .point-title {
+                  font-size: 2.4rem;
+                  line-height: 38px;
+                  font-weight: 700;
+                  margin-bottom: 1.6rem;
+              }
+          }
+  
+      }
+  
+      
+      
+      .strongs-point__item-title {
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 3.8rem;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+      }
+      
+      .strongs-point__item-desc {
+        font-size: 0.98rem;
+        line-height: 2;
+      }
+    }
+  }
+}
+
+.related-work {
+    padding-top: 16rem;
+
+    .related-list {
+        display: flex;
+        gap: 7.2rem;
+        margin-top: 6rem;
+
+        .work-card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 350px;
+          
+            &__visual {
+              display: flex;
+              gap: 2rem;
+              justify-content: flex-start;
+              align-items: flex-end;
+              margin-bottom: 2.4rem;
+          
+              img {
+                aspect-ratio: 3 / 2;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+              }
+            }
+          
+            &__info {
+              text-align: left;
+              margin-top: 1.2rem;
+            }
+          
+            &__client {
+              color: $sub-text-gray;
+              font-size: 1.3rem;
+              margin-bottom: 0.8rem;
+            }
+          
+            &__title {
+              font-size: 1.8rem;
+              font-weight: 700;
+              line-height: 27px;
+              margin-bottom: 2.5rem;
+              color: $color-black;
+            }
+          
+            &__tags {
+              display: flex;
+              gap: 2rem;
+            }
+            .work-tag {
+              display: inline-flex;
+              align-items: center;
+              background: $text-navy;
+              color: $color-white;
+              font-size: 1rem;
+              border-radius: 999px;
+              padding: 0.5rem 1rem;
+              font-weight: 700;
+              &::before {
+                content: '';
+                display: inline-block;
+                width: 1rem;
+                height: 1rem;
+                margin-right: 0.6rem;
+                background-size: contain;
+                background-repeat: no-repeat;
+              }
+              &:nth-child(1)::before { background-image: url('../images/logo-design.svg'); }
+              &:nth-child(2)::before { background-image: url('../images/logo-code.svg'); }
+              &:nth-child(3)::before { background-image: url('../images/logo-camera.svg'); }
+            }
+        }
+    }
+}
+
+.contact {
+    background-color: $key-color;
+}
+
+// レスポンシブ対応
+@media (max-width: $tablet) {
+  .service-top {
+    margin-top: 8rem;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    
+    img {
+      width: 28px;
+      height: auto;
+    }
+    
+    .back-copy {
+      font-size: 1.4rem;
+    }
+  }
+  
+  .web-create-main {
+    margin-top: 4rem;
+    
+    .web-create-title {
+      font-size: 3.2rem;
+      line-height: 1.3;
+      margin-bottom: 2rem;
+      
+      .en {
+        font-size: 1.8rem;
+        margin-left: 0!important;
+        display: block;
+        margin-top: 0.5rem;
+      }
+    }
+    
+    .web-create-desc {
+      font-size: 1.6rem;
+      margin-bottom: 4rem;
+      line-height: 1.6;
+    }
+  }
+  
+  .web-create-image-area {
+    padding-inline-start: 0;
+    margin: 0;
+    
+    img {
+      border-radius: 0;
+      height: 250px;
+    }
+  }
+  
+  .web-create-copy {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    
+    .main-copy {
+      font-size: 2.4rem;
+      line-height: 1.4;
+      margin-bottom: 2.4rem;
+      
+      .copy {
+        width: fit-content;
+        padding: 0.3em 0.6em;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      
+      .top {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  
+  .strongs-point-section {
+    margin: 0 2rem;
+    padding: 5rem 0;
+    border-radius: 3rem;
+    
+    .strongs-point__list {
+      margin-top: 3rem;
+      
+      .strongs-point__item {
+        flex-direction: column;
+        padding: 4rem 0;
+        gap: 4rem;
+        margin-bottom: 1rem;
+        align-items: center;
+        text-align: center;
+        
+        // 2つ目のポイント（偶数）で画像と文章の順番を逆にする
+        &:nth-child(even) {
+          .right-img {
+            order: 2;
+          }
+          
+          .left-copy {
+            order: 1;
+          }
+        }
+        
+        .left-copy {
+          flex-direction: column;
+          gap: 1.5rem;
+          align-items: center;
+          
+          .num {
+            font-size: 1.4rem;
+            padding: 0.4em 1em;
+            margin-right: 0;
+            align-self: center;
+          }
+          
+          .content-copy {
+            text-align: center;
+            
+            .point-title {
+              font-size: 2.0rem;
+              line-height: 1.4;
+              margin-bottom: 2rem;
+            }
+
+            p {
+              text-align: left;
+            }
+          }
+        }
+        
+        .right-img {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+  
+  .related-work {
+    padding-top: 8rem;
+    
+    .related-list {
+      flex-direction: column;
+      gap: 3rem;
+      margin-top: 3rem;
+      
+      .work-card {
+        min-width: auto;
+        
+        &__visual {
+          margin-bottom: 1.6rem;
+          
+          img {
+            aspect-ratio: 16/9;
+          }
+        }
+        
+        &__title {
+          font-size: 1.6rem;
+          line-height: 1.4;
+          margin-bottom: 1.5rem;
+        }
+        
+        &__client {
+          font-size: 1.2rem;
+        }
+        
+        &__tags {
+          gap: 1rem;
+          flex-wrap: wrap;
+        }
+        
+        .work-tag {
+          font-size: 0.9rem;
+          padding: 0.4rem 0.8rem;
+          
+          &::before {
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-right: 0.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+

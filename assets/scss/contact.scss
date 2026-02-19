@@ -1,0 +1,439 @@
+@import 'variable';
+
+.contact {
+  background-color: #ECEFF1 !important;
+  padding: 8rem 0;
+
+  .static-page-title {
+    margin-bottom: 12rem;
+  }
+
+  .contact-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 8rem;
+
+    .contact-info {
+      
+      .mail {
+        .mail-copy { margin-bottom: 1.8rem; }
+        .e-mail {
+          font-size: 3rem;
+          line-height: 1.2;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          hyphens: auto;
+          
+          a {
+            color: $text-navy;
+            text-decoration: none;
+            border-bottom: 1px solid $text-navy;
+            transition: all 0.3s ease;
+            word-break: break-all; // 長いメールアドレスを強制改行
+            
+            &:hover {
+              color: $key-color;
+              border-bottom-color: $key-color;
+            }
+          }
+        }
+      }
+      .social {
+        margin-top: 6.8rem;
+        .social-copy { margin-bottom: 1.8rem; }
+        .x {
+          font-size: 3rem;
+          line-height: 1.2;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          
+          a {
+            color: $text-navy;
+            text-decoration: none;
+            border-bottom: 1px solid $text-navy;
+            transition: all 0.3s ease;
+            word-break: break-all; // 長いURLを強制改行
+            
+            &:hover {
+              color: $key-color;
+              border-bottom-color: $key-color;
+            }
+          }
+        }
+      }
+    }
+
+// Contact Form 7のスタイリング
+.wpcf7 {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  .wrap-form-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .item-form-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+  }
+
+  .heading-form-contact {
+    font-size: 16px;
+    font-weight: 600;
+    color: $color-black;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contact-label {
+    color: $color-black;
+    background-color: $key-color;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-left: 8px;
+  }
+
+  .detail-form-contact {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      padding: 16px 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      color: $color-black;
+      background-color: $color-white;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: $key-color;
+        box-shadow: 0 0 0 2px rgba($key-color, 0.1);
+      }
+
+      &::placeholder {
+        color: #999;
+        font-size: 14px;
+      }
+    }
+
+    select {
+      cursor: pointer;
+      background-image: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 12px center;
+      background-repeat: no-repeat;
+      background-size: 16px;
+      padding-right: 40px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+  }
+
+  // プライバシーポリシー同意部分
+  .center {
+    margin: 40px 0 20px;
+
+    .wpcf7-acceptance {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+
+      input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+        accent-color: #004ddd;
+        margin-top: 2px;
+      }
+
+      .wpcf7-list-item {
+        margin: 0;
+        
+        label {
+            display: flex;
+            gap: 12px;
+            padding-bottom: 4px;
+            font-size: 14px;
+            color: $color-black;
+            line-height: 1.6;
+            cursor: pointer;
+            margin: 0;
+
+          a {
+            color: #004ddd;
+            text-decoration: underline;
+            font-weight: 600;
+            margin-right: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  // reCAPTCHA部分
+  .reCAPTCHA {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+
+    a {
+      color: #004ddd;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .btn-wrap {
+    margin-top: 40px;
+
+    input[type="submit"] {
+      background: $key-color;
+      color: $color-black;
+      font-size: 1.8rem;
+      font-weight: 700;
+      border: 2px solid $key-color;
+      border-radius: 12px;
+      padding: 1.1em 0;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+      width: 26rem;
+      margin-top: 4rem;
+      
+      &:hover {
+        background: darken($key-color, 15%);
+        border-color: darken($key-color, 15%);
+      }
+    }
+  }
+
+  // エラーメッセージのスタイリング
+  .wpcf7-not-valid-tip {
+    color: #ef242e;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .wpcf7-validation-errors {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .wpcf7-mail-sent-ok {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  // screen-reader-responseを非表示
+  .screen-reader-response {
+    display: none !important;
+  }
+}
+
+@media (max-width: $tablet) {
+  .contact-form-section {
+    padding: 80px 0;
+
+    &__header {
+      margin-bottom: 40px;
+    }
+
+    &__description {
+      font-size: 14px;
+    }
+  }
+
+  .wpcf7 {
+    .wrap-form-contact {
+      gap: 24px;
+    }
+
+    .item-form-contact {
+      gap: 8px;
+
+
+    }
+
+    .heading-form-contact {
+      font-size: 14px;
+    }
+
+    .detail-form-contact {
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="url"],
+      input[type="number"],
+      select,
+      textarea {
+        padding: 12px 16px;
+        font-size: 14px;
+      }
+
+    }
+
+    // プライバシーポリシー同意（モバイル）
+    .center {      
+      .wpcf7-acceptance {
+        flex-direction: column;
+        gap: 8px;
+
+        .wpcf7-list-item {
+          flex-direction: column;
+          gap: 8px;
+
+          label {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
+    // reCAPTCHA（モバイル）
+    .reCAPTCHA {
+      font-size: 10px;
+    }
+
+    .btn-wrap {
+      margin-top: 32px;
+
+      input[type="submit"] {
+        padding: 16px 40px;
+        font-size: 16px;
+        min-width: 160px;
+      }
+    }
+  }
+}
+
+    // エラーメッセージなど
+    .wpcf7 .wpcf7-response-output {
+      width: 100%;
+      max-width: 60rem;
+      margin: 0 auto;
+      box-sizing: border-box;
+      display: none;
+    }
+    
+    .wpcf7 > .wpcf7-response-output.wpcf7-mail-sent-ok {
+      display: block !important;
+    }
+    
+    .wpcf7-not-valid-tip {
+      display: block;
+      font-size: 1.4rem;
+      color: #e53935;
+      margin-bottom: 1.2rem;
+      font-weight: bold;
+    }
+    
+    .screen-reader-response {
+      display: none;
+    }
+  }
+}
+
+// タブレット対応
+@media (max-width: $tablet) {
+  .contact {
+    padding: 6rem 0rem;
+
+    .static-page-title {
+      margin-bottom: 6rem;
+      margin-top: 0rem;
+      padding-top: 0rem;
+    }
+
+    .contact-main {
+      flex-direction: column;
+      gap: 6rem;
+
+      .contact-info {
+        .mail,
+        .social {
+          .e-mail,
+          .x {
+            font-size: 2rem;
+            text-wrap: wrap;
+          }
+        }
+
+        .social {
+          margin-top: 4rem;
+        }
+      }
+
+      .form {
+        .wpcf7-form {
+          input[type="text"],
+          input[type="email"],
+          textarea {
+            font-size: 1.4rem;
+            padding: 12px 16px;
+          }
+
+          .detail-form-contact textarea {
+            font-size: 1.4rem;
+            padding: 0.8em 1em;
+          }
+
+          .heading-form-contact {
+            font-size: 1.4rem;
+            margin-bottom: 1.6rem;
+
+            .contact-label {
+              font-size: 1.2rem;
+              padding: 0.4rem 0.6rem;
+            }
+          }
+        }
+      }
+      
+      .btn-wrap input[type="submit"] {
+        width: 100%;
+        font-size: 1.6rem;
+        padding: 1rem 0;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// モバイル対応

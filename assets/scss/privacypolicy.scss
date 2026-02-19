@@ -1,0 +1,17 @@
+@import 'variable';
+
+.privacy {
+  margin-top: 15rem;
+}
+
+.textarea {
+    padding: 80px 210px;
+    line-height: 2;
+    font-size: 1.6rem;
+}
+
+@media (max-width: $tablet) {
+    .textarea {
+      padding: 40px 20px;
+    }
+  }

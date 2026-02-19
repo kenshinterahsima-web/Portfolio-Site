@@ -1,0 +1,217 @@
+@import "variable";
+
+.works-tag-filter {
+  margin: 8rem 0;
+  
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+  
+  li {
+    margin: 0;
+    
+    a {
+      display: inline-block;
+      padding: 0.8rem 3.2rem;
+      border-radius: 999px;
+      background: #fcfdfd;
+      color:$text-navy;
+      font-weight: 700;
+      font-size: 1.6rem;
+      line-height: 2.6rem;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: background 0.2s, color 0.2s, border 0.2s;
+      box-shadow: 0 2px 8px rgba(44,68,140,0.04);
+
+      &.active {
+        background:$key-color;
+        color: $color-black;
+      }
+      
+      &:hover:not(.active) {
+        background: #f4f5fa;
+      }
+    }
+  }
+}
+
+.works-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-wrap: wrap;
+  gap: 0;
+
+  .work-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 350px;
+    padding-bottom: 10rem;
+  
+    &__visual {
+      display: flex;
+      gap: 2rem;
+      justify-content: flex-start;
+      align-items: flex-end;
+      margin-bottom: 2.4rem;
+      overflow: hidden; // 拡大時のはみ出し防止
+
+      img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        display: block;
+        transition: transform .4s ease; // アニメーション
+      }
+
+      // ホバー/フォーカスで拡大
+      &:hover img { transform: scale(1.06); }
+      a:focus-visible img,
+      a:active img { transform: scale(1.06); }
+  
+      &--right {
+        justify-content: center;
+        align-items: center;
+        background: #e6ff6a;
+        border-radius: 0.6rem;
+        width: 100%;
+        min-height: 220px;
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 0.6rem;
+          background: none;
+          box-shadow: none;
+        }
+      }
+    }
+  
+    &__info {
+      text-align: left;
+      width: 60rem;
+      margin-top: 1.2rem;
+    }
+  
+    &__client {
+      color: $sub-text-gray;
+      font-size: 1.6rem;
+      margin-bottom: 0.8rem;
+    }
+  
+    &__title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      color: $color-black;
+    }
+  
+    &__tags {
+      display: flex;
+      gap: 2rem;
+    }
+    .work-tag {
+      display: inline-flex;
+      align-items: center;
+      background: $text-navy;
+      color: $color-white;
+      font-size: 1.3rem;
+      border-radius: 999px;
+      padding: 0.7rem 1.5rem;
+      font-weight: 700;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.8rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      &--design::before   { background-image: url('../images/logo-design.svg'); }
+      &--coding::before   { background-image: url('../images/logo-code.svg'); }
+      &--photo::before    { background-image: url('../images/logo-camera.svg'); }
+      &--direction::before{ background-image: url('../images/logo-direction.svg'); }
+    }
+  }
+}
+
+// レスポンシブ対応
+@media (max-width: $tablet) {
+  .works-tag-filter {
+    margin: 2rem 0;
+    
+    ul {
+      gap: 1rem;
+      justify-content: center;
+    }
+    
+    li a {
+      font-size: 1.2rem;
+      padding: 0.2rem 1rem;
+      border-radius: 10rem;
+    }
+  }
+  
+  .works-list {
+    padding: 0 2rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    
+    .work-card {
+      min-width: 0;
+      padding-bottom: 5rem;
+      
+      &__visual {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      &__info {
+        width: 100%;
+        text-align: center;
+      }
+      
+      &__client {
+        font-size: 1.4rem;
+      }
+      
+      &__title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+      
+      &__tags {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: fit-content;
+      }
+      
+      .work-tag {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+        
+        &::before {
+          width: 1.2rem;
+          height: 1.2rem;
+          margin-right: 0.6rem;
+        }
+      }
+    }
+  }
+}

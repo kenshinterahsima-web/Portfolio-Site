@@ -1,0 +1,684 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+html {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 62.5%;
+}
+html .grecaptcha-badge {
+  visibility: hidden !important;
+}
+
+h1 {
+  font-size: 4.8rem;
+  line-height: 80px;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 4rem;
+  line-height: 60px;
+  font-weight: 900;
+}
+
+h3 {
+  font-size: 2.4rem;
+  line-height: 38px;
+  font-weight: 900;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 26px;
+}
+
+.estimate {
+  background-color: #ECEFF1 !important;
+  padding: 20rem 0;
+}
+.estimate .estimate-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 8rem;
+}
+.estimate .static-page-title {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  min-width: 300px;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.estimate .static-page-title .top-text {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.estimate .static-page-title .bottom-text {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.estimate .estimate-main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  max-width: 800px;
+}
+.estimate .estimate-main .form {
+  width: 100%;
+}
+.estimate .wpcf7 {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.estimate .wpcf7 .wrap-form-contact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 4rem;
+  width: 100%;
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.estimate .wpcf7 .item-form-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 12px;
+}
+@media (min-width: 961px) {
+  .estimate .wpcf7 .item-form-contact:has(textarea),
+  .estimate .wpcf7 .item-form-contact:has(.wpcf7-acceptance),
+  .estimate .wpcf7 .item-form-contact:has(.reCAPTCHA),
+  .estimate .wpcf7 .item-form-contact:has(.btn-wrap) {
+    grid-column: 1/-1;
+  }
+}
+.estimate .wpcf7 .heading-form-contact {
+  font-size: 12px;
+  font-weight: 600;
+  color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+}
+.estimate .wpcf7 .contact-label {
+  color: #000000;
+  background-color: #FFD817;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+.estimate .wpcf7 .detail-form-contact input[type=text],
+.estimate .wpcf7 .detail-form-contact input[type=email],
+.estimate .wpcf7 .detail-form-contact input[type=tel],
+.estimate .wpcf7 .detail-form-contact input[type=url],
+.estimate .wpcf7 .detail-form-contact input[type=number],
+.estimate .wpcf7 .detail-form-contact select,
+.estimate .wpcf7 .detail-form-contact textarea {
+  width: 100%;
+  max-width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 16px 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #000000;
+  background-color: #FFFFFF;
+  -webkit-transition: border-color 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, -webkit-box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+.estimate .wpcf7 .detail-form-contact input[type=text]:focus,
+.estimate .wpcf7 .detail-form-contact input[type=email]:focus,
+.estimate .wpcf7 .detail-form-contact input[type=tel]:focus,
+.estimate .wpcf7 .detail-form-contact input[type=url]:focus,
+.estimate .wpcf7 .detail-form-contact input[type=number]:focus,
+.estimate .wpcf7 .detail-form-contact select:focus,
+.estimate .wpcf7 .detail-form-contact textarea:focus {
+  outline: none;
+  border-color: #FFD817;
+  -webkit-box-shadow: 0 0 0 2px rgba(255, 216, 23, 0.1);
+          box-shadow: 0 0 0 2px rgba(255, 216, 23, 0.1);
+}
+.estimate .wpcf7 .detail-form-contact input[type=text]::-webkit-input-placeholder, .estimate .wpcf7 .detail-form-contact input[type=email]::-webkit-input-placeholder, .estimate .wpcf7 .detail-form-contact input[type=tel]::-webkit-input-placeholder, .estimate .wpcf7 .detail-form-contact input[type=url]::-webkit-input-placeholder, .estimate .wpcf7 .detail-form-contact input[type=number]::-webkit-input-placeholder, .estimate .wpcf7 .detail-form-contact select::-webkit-input-placeholder, .estimate .wpcf7 .detail-form-contact textarea::-webkit-input-placeholder {
+  color: #999;
+  font-size: 14px;
+}
+.estimate .wpcf7 .detail-form-contact input[type=text]::-moz-placeholder, .estimate .wpcf7 .detail-form-contact input[type=email]::-moz-placeholder, .estimate .wpcf7 .detail-form-contact input[type=tel]::-moz-placeholder, .estimate .wpcf7 .detail-form-contact input[type=url]::-moz-placeholder, .estimate .wpcf7 .detail-form-contact input[type=number]::-moz-placeholder, .estimate .wpcf7 .detail-form-contact select::-moz-placeholder, .estimate .wpcf7 .detail-form-contact textarea::-moz-placeholder {
+  color: #999;
+  font-size: 14px;
+}
+.estimate .wpcf7 .detail-form-contact input[type=text]:-ms-input-placeholder, .estimate .wpcf7 .detail-form-contact input[type=email]:-ms-input-placeholder, .estimate .wpcf7 .detail-form-contact input[type=tel]:-ms-input-placeholder, .estimate .wpcf7 .detail-form-contact input[type=url]:-ms-input-placeholder, .estimate .wpcf7 .detail-form-contact input[type=number]:-ms-input-placeholder, .estimate .wpcf7 .detail-form-contact select:-ms-input-placeholder, .estimate .wpcf7 .detail-form-contact textarea:-ms-input-placeholder {
+  color: #999;
+  font-size: 14px;
+}
+.estimate .wpcf7 .detail-form-contact input[type=text]::-ms-input-placeholder, .estimate .wpcf7 .detail-form-contact input[type=email]::-ms-input-placeholder, .estimate .wpcf7 .detail-form-contact input[type=tel]::-ms-input-placeholder, .estimate .wpcf7 .detail-form-contact input[type=url]::-ms-input-placeholder, .estimate .wpcf7 .detail-form-contact input[type=number]::-ms-input-placeholder, .estimate .wpcf7 .detail-form-contact select::-ms-input-placeholder, .estimate .wpcf7 .detail-form-contact textarea::-ms-input-placeholder {
+  color: #999;
+  font-size: 14px;
+}
+.estimate .wpcf7 .detail-form-contact input[type=text]::placeholder,
+.estimate .wpcf7 .detail-form-contact input[type=email]::placeholder,
+.estimate .wpcf7 .detail-form-contact input[type=tel]::placeholder,
+.estimate .wpcf7 .detail-form-contact input[type=url]::placeholder,
+.estimate .wpcf7 .detail-form-contact input[type=number]::placeholder,
+.estimate .wpcf7 .detail-form-contact select::placeholder,
+.estimate .wpcf7 .detail-form-contact textarea::placeholder {
+  color: #999;
+  font-size: 14px;
+}
+.estimate .wpcf7 .detail-form-contact select {
+  cursor: pointer;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+.estimate .wpcf7 .detail-form-contact textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.estimate .wpcf7 .center {
+  margin: 40px 0 20px;
+}
+@media (min-width: 961px) {
+  .estimate .wpcf7 .center {
+    grid-column: 1/-1;
+  }
+}
+.estimate .wpcf7 .center .wpcf7-acceptance {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 12px;
+}
+.estimate .wpcf7 .center .wpcf7-acceptance input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: #004ddd;
+  margin-top: 2px;
+}
+.estimate .wpcf7 .center .wpcf7-acceptance .wpcf7-list-item {
+  margin: 0;
+}
+.estimate .wpcf7 .center .wpcf7-acceptance .wpcf7-list-item label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  padding-bottom: 4px;
+  font-size: 14px;
+  color: #000000;
+  line-height: 1.6;
+  cursor: pointer;
+  margin: 0;
+}
+.estimate .wpcf7 .center .wpcf7-acceptance .wpcf7-list-item label a {
+  color: #004ddd;
+  text-decoration: underline;
+  font-weight: 600;
+  margin-right: 2px;
+}
+.estimate .wpcf7 .reCAPTCHA {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+}
+.estimate .wpcf7 .reCAPTCHA a {
+  color: #004ddd;
+  text-decoration: underline;
+}
+.estimate .wpcf7 .reCAPTCHA a:hover {
+  text-decoration: none;
+}
+.estimate .wpcf7 .btn-wrap {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+@media (min-width: 961px) {
+  .estimate .wpcf7 .btn-wrap {
+    grid-column: 1/-1;
+  }
+}
+.estimate .wpcf7 .btn-wrap input[type=submit] {
+  background: #FFD817;
+  color: #000000;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: 2px solid #FFD817;
+  border-radius: 12px;
+  padding: 1.1em 3em;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: auto;
+  min-width: 26rem;
+}
+.estimate .wpcf7 .btn-wrap input[type=submit]:hover {
+  background: rgb(201.5, 167.6271551724, 0);
+  border-color: rgb(201.5, 167.6271551724, 0);
+}
+.estimate .wpcf7 .wpcf7-not-valid-tip {
+  color: #ef242e;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.estimate .wpcf7 .wpcf7-validation-errors {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.estimate .wpcf7 .wpcf7-mail-sent-ok {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.estimate .wpcf7 .screen-reader-response {
+  display: none !important;
+}
+.estimate .wpcf7 .wpcf7-response-output {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: none;
+}
+.estimate .wpcf7 > .wpcf7-response-output.wpcf7-mail-sent-ok {
+  display: block !important;
+}
+.estimate .wpcf7 .wpcf7-not-valid-tip {
+  display: block;
+  font-size: 1.4rem;
+  color: #e53935;
+  margin-bottom: 1.2rem;
+  font-weight: bold;
+}
+.estimate .wpcf7 .screen-reader-response {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .estimate {
+    padding: 6rem 0;
+  }
+  .estimate .estimate-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 6rem;
+  }
+  .estimate .static-page-title {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 0;
+    text-align: center;
+    width: 100%;
+  }
+  .estimate .static-page-title .top-text {
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .estimate .static-page-title .bottom-text {
+    text-align: center;
+  }
+  .estimate .estimate-main {
+    padding: 0;
+    width: 100%;
+  }
+  .estimate .wpcf7 .wrap-form-contact {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .estimate .wpcf7 .item-form-contact {
+    gap: 8px;
+  }
+  .estimate .wpcf7 .heading-form-contact {
+    font-size: 14px;
+  }
+  .estimate .wpcf7 .detail-form-contact input[type=text],
+  .estimate .wpcf7 .detail-form-contact input[type=email],
+  .estimate .wpcf7 .detail-form-contact input[type=tel],
+  .estimate .wpcf7 .detail-form-contact input[type=url],
+  .estimate .wpcf7 .detail-form-contact input[type=number],
+  .estimate .wpcf7 .detail-form-contact select,
+  .estimate .wpcf7 .detail-form-contact textarea {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  .estimate .wpcf7 .center .wpcf7-acceptance {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 8px;
+  }
+  .estimate .wpcf7 .center .wpcf7-acceptance .wpcf7-list-item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 8px;
+  }
+  .estimate .wpcf7 .center .wpcf7-acceptance .wpcf7-list-item label {
+    font-size: 12px;
+  }
+  .estimate .wpcf7 .reCAPTCHA {
+    font-size: 10px;
+  }
+  .estimate .wpcf7 .btn-wrap {
+    margin-top: 32px;
+  }
+  .estimate .wpcf7 .btn-wrap input[type=submit] {
+    padding: 16px 40px;
+    font-size: 16px;
+    min-width: 160px;
+    width: 100%;
+  }
+}
+.estimate-faq {
+  padding: 12rem 0;
+  background-color: #FFFFFF;
+}
+.estimate-faq .section-title {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 8rem;
+}
+.estimate-faq .faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.estimate-faq .faq-list .faq-item {
+  background: #FFFFFF;
+  border-radius: 1.6rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.estimate-faq .faq-list .faq-item .faq-question {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2.4rem 3rem;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.estimate-faq .faq-list .faq-item .faq-question h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #263238;
+  margin: 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.estimate-faq .faq-list .faq-item .faq-question .faq-icon {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #263238;
+  line-height: 1;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  margin-left: 2rem;
+}
+.estimate-faq .faq-list .faq-item .faq-question:hover {
+  background: rgba(255, 216, 23, 0.1);
+}
+.estimate-faq .faq-list .faq-item .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 3rem;
+}
+.estimate-faq .faq-list .faq-item .faq-answer p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #000000;
+  padding-bottom: 0;
+  margin-top: 2rem;
+}
+.estimate-faq .faq-list .faq-item.active .faq-question {
+  background: rgba(255, 216, 23, 0.1);
+}
+.estimate-faq .faq-list .faq-item.active .faq-question .faq-icon {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.estimate-faq .faq-list .faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 3rem 2.4rem 3rem;
+}
+
+@media (max-width: 960px) {
+  .estimate-faq {
+    padding: 8rem 0;
+  }
+  .estimate-faq .section-title {
+    margin-bottom: 4rem;
+  }
+  .estimate-faq .faq-list {
+    padding: 0 2rem;
+  }
+  .estimate-faq .faq-list .faq-item {
+    margin-bottom: 1.6rem;
+  }
+  .estimate-faq .faq-list .faq-item .faq-question {
+    padding: 2rem;
+  }
+  .estimate-faq .faq-list .faq-item .faq-question h3 {
+    font-size: 1.6rem;
+  }
+  .estimate-faq .faq-list .faq-item .faq-question .faq-icon {
+    font-size: 2.4rem;
+    margin-left: 1.6rem;
+  }
+  .estimate-faq .faq-list .faq-item .faq-answer {
+    padding: 0 2rem;
+  }
+  .estimate-faq .faq-list .faq-item .faq-answer p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+  }
+  .estimate-faq .faq-list .faq-item.active .faq-answer {
+    padding: 0 2rem 2rem 2rem;
+  }
+}

@@ -1,0 +1,924 @@
+@import 'variable';
+
+body {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.05em;
+  overflow-x: hidden;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+main {
+  .fv-top {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+
+    &__bg {
+      position: absolute;
+      inset: 0;
+      background: url('../images/fv-bg.png') center/cover no-repeat;
+      z-index: 0;
+    }
+
+    &__content {
+      position: relative;
+      text-align: left;
+      margin-right: auto;
+    }
+
+    &__image {
+      flex: 1;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+
+    &__title {
+      flex: 1;
+    }
+
+    &__text {
+      color: $color-white;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10rem;
+      gap: 2rem;
+
+    }
+
+    &__copy {
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+    }
+
+    &__sub {
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 1.8;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  .works {
+    padding-top: 10rem;
+
+    .works-copy {
+      margin-top: 3.6rem;
+      margin-bottom: 8rem;
+    }
+
+    .works-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      flex-wrap: wrap;
+      gap: 0;
+
+      .work-card {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10rem;
+        width: 100%;
+      
+        &__visual {
+          display: flex;
+          gap: 2rem;
+          justify-content: flex-start;
+          align-items: flex-end;
+          margin-bottom: 2.4rem;
+          overflow: hidden; // 画像拡大時のはみ出し防止
+          
+          img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 3 / 2;
+            object-fit: cover; /* or contain */
+            display: block;
+            transition: transform .4s ease; // アニメーション
+          }
+
+          // ホバー/フォーカスで拡大
+          &:hover img {
+            transform: scale(1.06);
+          }
+          a:focus-visible img,
+          a:active img {
+            transform: scale(1.06);
+          }
+      
+          &--right {
+            justify-content: center;
+            align-items: center;
+            background: #e6ff6a;
+            border-radius: 1.2rem;
+            width: 100%;
+            min-height: 220px;
+            img {
+              width: 100%;
+              height: auto;
+              border-radius: 0.6rem;
+              background: none;
+              box-shadow: none;
+            }
+          }
+        }
+      
+        &__info {
+          text-align: left;
+          max-width: 60rem;
+          margin-top: 1.2rem;
+        }
+      
+        &__client {
+          color: $sub-text-gray;
+          font-size: 1.6rem;
+          margin-bottom: 0.8rem;
+        }
+      
+        &__title {
+          font-size: 2.4rem;
+          line-height: 1.5;
+          font-weight: 700;
+          margin-bottom: 2.5rem;
+          color: $color-black;
+        }
+      
+        &__tags {
+          display: flex;
+          gap: 2rem;
+        }
+        .work-tag {
+          display: inline-flex;
+          align-items: center;
+          background: $text-navy;
+          color: $color-white;
+          font-size: 1.3rem;
+          border-radius: 999px;
+          padding: 0.7rem 1.5rem;
+          font-weight: 700;
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.8rem;
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+          &:nth-child(1)::before { background-image: url('../images/logo-design.svg'); }
+          &:nth-child(2)::before { background-image: url('../images/logo-code.svg'); }
+          &:nth-child(3)::before { background-image: url('../images/logo-camera.svg'); }
+        }
+      }
+      
+    }
+
+    .main-btn {
+      display: block;
+      width: fit-content; // ← ここがポイント！（または width: auto; でもOK）
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+  }
+
+  .price {
+    background: url('../images/ex.png');
+    margin-top: 24rem;
+
+    .inner {
+      padding-top: 12rem;
+      padding-bottom: 12rem;
+    }
+
+    .section-title {
+      text-align: center;
+      align-items: center;
+    }
+
+    .price-copy {
+      margin-top: 3.6rem;
+      margin-bottom: 8rem;
+      text-align: center;
+      font-size: 1.6rem;
+      line-height: 2;
+      color: $color-black;
+    }
+
+    .price-card-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 6rem;
+
+      .price-card {
+        margin-top: 4rem;
+        background: $color-white;
+        border-radius: 1.6rem;
+        padding: 6rem 8rem;
+        display: flex;
+        flex-direction: column;
+        max-width: 800px;
+        width: 100%;
+
+        &__header {
+          border-bottom: 1px solid $color-gray;
+          padding-bottom: 2.4rem;
+          margin-bottom: 2.4rem;
+          text-align: center;
+        }
+
+        &__title {
+          font-size: 3.2rem;
+          font-weight: 700;
+          color: $text-navy;
+          margin-bottom: 1.6rem;
+        }
+
+        &__price {
+          display: flex;
+          align-items: baseline;
+          justify-content: center;
+          gap: 0.8rem;
+        }
+
+        &__amount {
+          font-size: 4rem;
+          font-weight: 700;
+          color: $text-navy;
+        }
+
+        &__unit {
+          font-size: 1.8rem;
+          color: $sub-text-gray;
+        }
+
+        &__content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+        }
+
+        &__desc {
+          font-size: 1.4rem;
+          line-height: 2;
+          color: $color-black;
+          margin-bottom: 3.2rem;
+        }
+
+        &__features {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          flex: 1;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1.6rem 3rem;
+          justify-content: center;
+          margin-bottom: 3.2rem;
+
+          li {
+            font-size: 1.5rem;
+            line-height: 2;
+            color: $color-black;
+            padding-left: 2rem;
+            position: relative;
+            flex: 0 1 calc(33.333% - 2rem); // デスクトップで3列
+
+            &::before {
+              content: '✓';
+              position: absolute;
+              left: 0;
+              color: $key-color;
+              font-weight: 700;
+            }
+          }
+
+          // タブレットサイズ（768px以下）で2列に
+          @media (max-width: 768px) {
+            li {
+              flex: 0 1 calc(50% - 1.5rem);
+            }
+          }
+        }
+
+        &__button {
+          display: flex;
+          justify-content: center;
+          margin-top: auto;
+          padding-top: 2.4rem;
+        }
+      }
+    }
+
+    .price-note {
+      text-align: center;
+      font-size: 1.3rem;
+      line-height: 2;
+      color: #565656;
+    }
+  }
+
+  .service {
+    background: url('../images/ex.png');
+    margin-top: 24rem;
+
+    .inner {
+      padding-top: 12rem;
+      padding-bottom: 12rem;
+    }
+
+    ul.service-list {
+      margin-top: 5rem;
+
+      .service-block {
+        background: $color-white;
+        border-radius: 1.6rem;
+        padding: 6rem 10rem;
+        margin: 4rem 0;
+      
+        &__inner {
+          display: flex;
+          align-items: center;
+          gap: 10rem;
+          margin: 0 auto;
+        }
+      
+        &__img {
+          flex: 1 1 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      
+          img {
+            max-width: 90%;
+            height: auto;
+            display: block;
+          }
+        }
+      
+        &__content {
+          flex: 1 1 55%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+
+      
+          .main-btn {
+            display: block;
+            margin-left: 0;
+            margin-top: 0.5rem;
+      
+          }
+        }
+      
+        &__number {
+          display: inline-block;
+          background: $key-color;
+          color: $color-black;
+          font-weight: 700;
+          font-size: 1.6rem;
+          border-radius: 90rem;
+          padding: 0.5em 1.2em;
+          margin-bottom: 1.6rem;
+          letter-spacing: 0.05em;
+        }
+      
+        &__title {
+          font-size: 3.2rem;
+          font-weight: 700;
+          margin-bottom: 3.6rem;
+          color: $color-black;
+        }
+      
+        &__desc {
+          font-size: 1.4rem;
+          line-height: 2;
+          color: $color-black;
+          margin-bottom: 4.8rem;
+        }
+      }
+    }
+  }
+
+  .about {
+    padding-top: 24rem;
+
+   .about-copy {
+    margin: 3.6rem 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 2;
+    letter-spacing: 0.05em;
+   }
+
+   .main-btn {
+    margin-left: 8rem;
+    margin-bottom: 8rem;
+   }
+
+   .about-images {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    
+      .div1,
+      .div2 {
+        flex: 1;
+        
+        img {
+          border-radius: 8px;
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .faq {
+    padding-bottom: 12rem;
+
+    .inner {
+      padding-top: 12rem;
+    }
+
+    .section-title {
+      text-align: center;
+      align-items: center;
+      margin-bottom: 8rem;
+    }
+
+    .faq-list {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .faq-item {
+      background: $color-gray;
+      border-radius: 0.6rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2.4rem 3rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        h3 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          color: $text-navy;
+          margin: 0;
+          flex: 1;
+        }
+
+        .faq-icon {
+          font-size: 3rem;
+          font-weight: 700;
+          color: $text-navy;
+          line-height: 1;
+          transition: transform 0.3s ease;
+          margin-left: 2rem;
+        }
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        padding: 0 3rem;
+
+        p {
+          font-size: 1.5rem;
+          line-height: 2;
+          color: $color-black;
+          padding-bottom: 0;
+          margin-top: 2rem;
+        }
+      }
+
+      &.active {
+        .faq-question {
+          .faq-icon {
+            transform: rotate(45deg);
+          }
+        }
+
+        .faq-answer {
+          max-height: 500px;
+          padding: 0 3rem 2.4rem 3rem;
+        }
+      }
+    }
+  }
+
+
+
+}
+
+// =============================
+// レスポンシブデザイン（$tablet以下）
+// =============================
+
+@media (max-width: $tablet) {
+  // fv-top
+  .fv-top {
+    height: auto;
+    min-height: 500px;
+    padding: 4rem 0;
+    
+    &__content {
+      flex-direction: column;
+      gap: 3rem;
+      padding: 0 2rem;
+    }
+
+    &__image {
+      order: 1;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__title {
+      order: 2;
+      gap: 2rem;
+    }
+
+    &__copy {
+      font-size: 2.8rem !important;
+      line-height: 1.4;
+    }
+
+    &__sub {
+      font-size: 1.6rem;
+      line-height: 1.6;
+    }
+  }
+
+  // works
+  .works {
+    .works-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2rem;
+      padding: 0 1rem;
+      .work-card {
+        width: 100%;
+        margin: 0 auto;
+        padding: 1.2rem 1rem 2.4rem 1rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0.6rem;
+        &__visual {
+          width: 100%;
+          margin-bottom: 1.2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        &__visual img {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: 0.6rem;
+        }
+        &__info {
+          width: 100%;
+          padding: 0 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        &__title {
+          font-size: 1.6rem;
+          margin-bottom: 1.2rem;
+          text-align: center;
+        }
+        &__client {
+          font-size: 1.1rem;
+          text-align: center;
+        }
+        &__tags {
+          width: 100%;
+          gap: 1rem;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 0.8rem;
+        }
+        .work-tag {
+          font-size: 1.0rem;
+          padding: 0.4rem 1rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+    .main-btn {
+      margin-left: auto;
+      margin-right: auto;
+      width: fit-content;
+    }
+  }
+
+  // service
+  .service {
+    margin-top: 12rem;
+    
+    .inner {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    ul.service-list {
+      margin-top: 2.5rem;
+      
+      .service-block {
+        padding: 4rem 2rem !important;
+        margin: 2rem 0;
+      
+        &__inner {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem !important;
+          align-items: center;
+        }
+        
+        &__img {
+          order: 1;
+          width: 100%;
+          max-width: 300px;
+          
+          img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+          }
+        }
+        
+        &__content {
+          order: 2;
+          text-align: center;
+          align-items: center !important;
+          justify-content: center;
+          width: 100%;
+        }
+
+        &__title {
+          font-size: 2.4rem !important;
+          margin-bottom: 1rem !important;
+          text-align: center;
+        }
+        
+        &__desc {
+          font-size: 1.4rem !important;
+          margin-bottom: 2.4rem;
+          text-align: left;
+          line-height: 1.8;
+        }
+        
+        &__number {
+          font-size: 1.4rem;
+          padding: 0.4em 1em;
+          margin-bottom: 1.2rem;
+        }
+      }
+    }
+  }
+
+  // about
+  .about {
+    padding-top: 8rem !important;
+    padding-bottom: 8rem !important;
+    .about-copy {
+      margin: 2rem 0;
+      font-size: 1.6rem !important;
+      line-height: 1.4;
+    }
+    .main-btn {
+      margin-left: 20px !important;
+    }
+    .about-images {
+      flex-direction: column !important;
+    }
+  }
+
+  // faq
+  .faq {
+    margin-top: 12rem;
+    padding-bottom: 8rem;
+
+    .inner {
+      padding-top: 6rem;
+    }
+
+    .section-title {
+      margin-bottom: 4rem;
+    }
+
+    .faq-list {
+      display: grid;
+      grid-template-columns: 1fr !important;
+      gap: 1.6rem;
+    }
+
+    .faq-item {
+      .faq-question {
+
+        h3 {
+          font-size: 1.6rem !important;
+        }
+
+        .faq-icon {
+          font-size: 2.4rem;
+          margin-left: 1.6rem;
+        }
+      }
+
+      .faq-answer {
+        padding: 0 2rem;
+
+        p {
+          font-size: 1.4rem;
+          line-height: 1.8;
+        }
+      }
+
+      &.active {
+        .faq-answer {
+          padding: 0 2rem 2rem 2rem;
+        }
+      }
+    }
+  }
+
+  // price
+  .price {
+    margin-top: 12rem;
+    
+    .inner {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+
+    .section-title {
+      margin-bottom: 4rem;
+    }
+
+    .price-copy {
+      margin: 2rem 0 4rem 0;
+      font-size: 1.6rem;
+      line-height: 2;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    .price-card-wrapper {
+      margin-bottom: 4rem;
+
+      .price-card {
+        padding: 3rem 3rem !important;
+        margin-top: 0;
+        border-radius: 1.2rem;
+
+        &__header {
+          padding-bottom: 1.6rem;
+          margin-bottom: 1.6rem;
+          border-bottom: 1px solid $color-gray;
+        }
+
+        &__title {
+          font-size: 2rem !important;
+          margin-bottom: 1.2rem;
+          text-align: center;
+        }
+
+        &__price {
+          display: flex;
+          align-items: baseline;
+          justify-content: center;
+          gap: 0.6rem;
+        }
+
+        &__amount {
+          font-size: 2.8rem;
+        }
+
+        &__unit {
+          font-size: 1.6rem;
+        }
+
+        &__desc {
+          font-size: 1.4rem;
+          line-height: 1.8;
+          margin-bottom: 2rem;
+          text-align: left;
+        }
+
+        &__features {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          margin-bottom: 2rem;
+
+          li {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            padding: 0.6rem 0;
+            padding-left: 1.6rem;
+            position: relative;
+            flex: 0 1 calc(50% - 0.5rem); // タブレットサイズで2列
+
+            &::before {
+              content: '✓';
+              position: absolute;
+              left: 0;
+              color: $key-color;
+              font-weight: 700;
+            }
+          }
+
+          // モバイルサイズ（480px以下）で1列に
+          @media (max-width: $mobile) {
+            li {
+              flex: 0 1 100%; // モバイルで1列
+            }
+          }
+        }
+
+        &__button {
+          display: flex;
+          justify-content: center;
+          padding-top: 2rem;
+          margin-top: 2rem;
+
+          .main-btn {
+            width: 100%;
+            max-width: 100%;
+            justify-content: center;
+            font-size: 1.4rem;
+            padding: 1.6rem 2rem;
+          }
+        }
+      }
+    }
+
+    .price-note {
+      font-size: 1.3rem;
+      text-align: center;
+      padding: 0 2rem;
+      line-height: 2;
+      color: #565656;
+    }
+
+    // モバイルサイズ（480px以下）で1列に
+    @media (max-width: $mobile) {
+      .price-card-wrapper {
+        .price-card {
+          &__features {
+            li {
+              flex: 0 1 100%; // モバイルで1列
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
